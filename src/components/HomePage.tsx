@@ -3,21 +3,37 @@ import Image from "next/image";
 
 const HomePage = () => {
   return (
-    <main className="container">
+    <main className="container m-auto">
       {/* Hero Section */}
-      <div className="flex flex-col items-center gap-3">
-        <h1 className="text-8xl text-clip font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">
+      <div className="h-full flex flex-col h-full m-6 gap-6 justify-items-center items-center">
+        <h1 className="text-8xl leading-tight text-clip font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">
           T3Blog
         </h1>{" "}
-        <h2 className="text-5xl mt-3">
+        <h2 className="text-5xl">
           created with{" "}
           <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">
             T3
           </span>{" "}
           stack
         </h2>
+        {/* CTA Section */}
+        <div className="flex justify-around gap-5 mt-3">
+          <button className="text-white border rounded px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500">
+            Explore Blogs
+          </button>
+          <button
+            className="border rounded px-6 py-3 
+          border-orange-500
+          hover:bg-gradient-to-r from-orange-500 to-yellow-500
+          hover:text-white
+          "
+          >
+            About
+          </button>
+        </div>
+        {/* CTA Section */}
         {/* Framework Logos Section */}
-        <div className="flex gap-6">
+        <div className="flex gap-8 mt-3">
           <Image
             src="/svg/next-js.svg"
             alt="next.js logo"

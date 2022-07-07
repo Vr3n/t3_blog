@@ -27,7 +27,9 @@ const Navbar = () => {
     <nav className="p-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ">
       <div className=" flex justify-between container mx-auto">
         <Link href="/">
-          <h2 className="cursor-pointer text-2xl text-white font-bold">T3Blog</h2>
+          <h2 className="cursor-pointer text-2xl text-white font-bold">
+            T3Blog
+          </h2>
         </Link>
         <ul className="flex text-white self-center flex-grow-1 gap-8">
           {NavItems.map((item, idx) => (
