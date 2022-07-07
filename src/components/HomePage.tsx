@@ -18,14 +18,21 @@ const HomePage = () => {
         </h2>
         {/* CTA Section */}
         <div className="flex justify-around gap-5 mt-3">
-          <button className="text-white border rounded px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500">
+          <button className="text-white font-bold rounded px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500
+          transition delay-150
+          shadow-md shadow-orange-500/50
+          hover:scale-105 hover:shadow-lg hover:shadow-orange-500/80
+          ">
             Explore Blogs
           </button>
           <button
-            className="border rounded px-6 py-3 
+            className="
+            transition delay-150
+            border rounded px-6 py-3 
           border-orange-500
-          hover:bg-gradient-to-r from-orange-500 to-yellow-500
-          hover:text-white
+          hover:bg-orange-500
+          shadow-md shadow-orange-500/50
+          hover:scale-105 hover:shadow-lg hover:shadow-orange-500/80
           "
           >
             About
