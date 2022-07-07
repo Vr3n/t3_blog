@@ -1,6 +1,15 @@
 const Card = () => {
   return (
-    <article className="p-10 rounded-xl bg-white shadow-lg bg-gradient-to-r from-sky-100 via-pink-100 to-orange-100/50">
+    <article
+      className="
+    cursor-pointer 
+    p-10
+    rounded-xl
+    bg-white shadow-lg bg-gradient-to-r from-sky-100 via-pink-100 to-orange-100/50
+    transition delay-150
+    hover:scale-101 hover:shadow-xl
+    "
+    >
       <h5 className="text-xl font-medium mb-2">Card Title</h5>
       <p className="text-gray-700 text-base mb-4">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, voluptas
