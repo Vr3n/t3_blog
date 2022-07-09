@@ -87,6 +87,12 @@ const HomePage = () => {
             width="64"
             height="64"
           />
+          <Image
+            src="/svg/planetscale_logo.svg"
+            alt="Planet Scale Logo"
+            width="64"
+            height="64"
+          />
         </div>
         {/* Framework Logos Section */}
       </div>
