@@ -1,11 +1,25 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const HomePage = () => {
   return (
-    <main className="container m-auto">
+    <motion.main
+      layoutId="homePage"
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      variants={{
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: -50 },
+        exit: { opacity: 0, y: 50 },
+      }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="container m-auto"
+    >
       {/* Hero Section */}
-      <div className="h-full flex flex-col h-full m-6 gap-6 justify-items-center items-center">
+      <div className="flex flex-col h-full m-6 gap-6 justify-items-center items-center">
         <h1 className="text-8xl leading-tight text-clip font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">
           T3Blog
         </h1>{" "}
@@ -18,25 +32,33 @@ const HomePage = () => {
         </h2>
         {/* CTA Section */}
         <div className="flex justify-around gap-5 mt-3">
-          <button className="text-white font-bold rounded px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500
+          <Link href="/blog">
+            <motion.button
+              className="text-white font-bold rounded px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500
           transition delay-150
           shadow-md shadow-orange-500/50
-          hover:scale-105 hover:shadow-lg hover:shadow-orange-500/80
-          ">
-            Explore Blogs
-          </button>
-          <button
+          hover:scale-110 hover:text-white
+          hover:shadow-lg hover:shadow-orange-500/80
+          active:scale-95 active:shadow-sm active:shadow-orange-500/30
+          "
+            >
+              Explore Blogs
+            </motion.button>
+          </Link>
+          <motion.button
             className="
             transition delay-150
             border rounded px-6 py-3 
           border-orange-500
           hover:bg-orange-500
+          hover:scale-110 hover:text-white
           shadow-md shadow-orange-500/50
-          hover:scale-105 hover:shadow-lg hover:shadow-orange-500/80
+          hover:shadow-lg hover:shadow-orange-500/80
+          active:scale-95 active:shadow-sm active:shadow-orange-500/30
           "
           >
             About
-          </button>
+          </motion.button>
         </div>
         {/* CTA Section */}
         {/* Framework Logos Section */}
@@ -69,7 +91,7 @@ const HomePage = () => {
         {/* Framework Logos Section */}
       </div>
       {/* Hero Section */}
-    </main>
+    </motion.main>
   );
 };
 

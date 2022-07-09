@@ -5,14 +5,20 @@ import type { AppType } from "next/dist/shared/lib/utils";
 import superjson from "superjson";
 import { SessionProvider } from "next-auth/react";
 import "../styles/globals.css";
+import Navbar from "../components/Navbar/Navbar";
+import { AnimatePresence } from "framer-motion";
 
 const MyApp: AppType = ({
   Component,
   pageProps: { session, ...pageProps },
+  router,
 }) => {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <Navbar />
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} key={router.route} />
+      </AnimatePresence>
     </SessionProvider>
   );
 };

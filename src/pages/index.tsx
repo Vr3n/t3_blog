@@ -11,7 +11,6 @@ const Home: NextPage = () => {
         <meta name="description" content="A blog created using T3 stack." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
       <HomePage />
     </>
   );
