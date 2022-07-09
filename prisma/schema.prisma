@@ -12,10 +12,6 @@ datasource db {
     referentialIntegrity = "prisma"
 }
 
-model Example {
-    id String @id @default(cuid())
-}
-
 // Necessary for Next auth
 model Account {
     id                String  @id @default(cuid())
@@ -51,6 +47,7 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
+    Post          Post[]
 }
 
 model VerificationToken {
@@ -59,4 +56,37 @@ model VerificationToken {
     expires    DateTime
 
     @@unique([identifier, token])
+}
+
+// The Blog Model.
+model Post {
+    id         String     @id @default(cuid())
+    title      String
+    Content    String     @db.Text
+    published  Boolean    @default(false)
+    author     User       @relation(fields: [authorId], references: [id], onDelete: Cascade)
+    authorId   String
+    createdAt  DateTime   @default(now())
+    updatedAt  DateTime   @updatedAt
+    categories Category[]
+    comments   Comment[]
+
+    @@index([authorId])
+}
+
+model Category {
+    id    String @id @default(cuid())
+    name  String
+    posts Post[]
+}
+
+model Comment {
+    id        String   @id @default(cuid())
+    comment   String   @db.Text
+    post      Post     @relation(fields: [postId], references: [id])
+    postId    String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([postId])
 }

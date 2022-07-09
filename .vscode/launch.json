@@ -5,6 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "command": "yarn prisma studio",
+            "name": "Prisma Studio ��",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
             "command": "yarn dev",
             "name": "NExt dev",
             "request": "launch",

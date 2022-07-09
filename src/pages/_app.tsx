@@ -14,7 +14,7 @@ const MyApp: AppType = ({
   router,
 }) => {
   return (
-    <SessionProvider session={session}>
+    <SessionProvider session={session} refetchOnWindowFocus={false}>
       <Navbar />
       <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} key={router.route} />
