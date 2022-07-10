@@ -1,5 +1,7 @@
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Avatar from "../Avatar/Avatar";
 
 const NavItems = [
   {
@@ -18,6 +20,7 @@ const NavItems = [
 
 const Navbar = () => {
   const router = useRouter();
+  const { data } = useSession();
 
   return (
     <nav className="p-4 shadow-md">
@@ -38,6 +41,7 @@ const Navbar = () => {
             </Link>
           ))}
         </ul>
+        <Avatar session={data} />
       </div>
     </nav>
   );
