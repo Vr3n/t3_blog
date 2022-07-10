@@ -41,7 +41,9 @@ const Navbar = () => {
             </Link>
           ))}
         </ul>
-        <Avatar session={data} />
+        <div className="relative">
+          <Avatar session={data} />
+        </div>
       </div>
     </nav>
   );
