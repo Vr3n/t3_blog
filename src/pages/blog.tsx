@@ -3,6 +3,7 @@ import { signIn, useSession } from "next-auth/react";
 import Head from "next/head";
 import Card from "../components/Card/Card";
 import { motion } from "framer-motion";
+import AccessDenied from "../components/AccessDenied";
 
 const Blog: NextPage = () => {
   const { data, status } = useSession();
@@ -44,8 +45,7 @@ const Blog: NextPage = () => {
   } else {
     return (
       <>
-        <p>You are not Logged In!</p>
-        <button onClick={() => signIn()}>Login Here!</button>
+        <AccessDenied />
       </>
     );
   }
